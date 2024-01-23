@@ -28,13 +28,17 @@ function App() {
       return;
     }
     let IntemIndex = lista.indexOf(input);
+
     if (IntemIndex >= 0) {
       alert("você nao pode repetir o mesmo item da lista");
       setInput("");
       return;
     }
+
     setLista([...lista, input]);
+
     setInput("");
+    
     console.log(lista);
   };
 
@@ -43,10 +47,12 @@ function App() {
     tmpArray.splice(index, 1);
     setLista(tmpArray);
   };
+
   const SubirElemento = (index) => {
     if (index == 0) {
       return;
     }
+
     let SegondTmpArray = [...lista];
     SegondTmpArray.splice(index--, 0, SegondTmpArray.splice(index--, 1)[0]);
     setLista(SegondTmpArray);
